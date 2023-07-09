@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<partial name="/Views/AdminLayout/HeadPartial.cshtml" />
+
+
+<body>
+
+    <partial name="/Views/AdminLayout/PreLoaderPartial.cshtml" />
+
+    <div id="main-wrapper">
+
+        <partial name="/Views/AdminLayout/NavHeaderPartial.cshtml" />
+
+        <partial name="/Views/AdminLayout/HeaderPartial.cshtml" />
+
+        <partial name="/Views/AdminLayout/SidebarPartial.cshtml" />
+
+        <div class="content-body">
+
+           
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                @RenderBody()
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+
+        <partial name="/Views/AdminLayout/FooterPartial.cshtml" />
+
+    </div>
+
+    <script src="~/adminpanel/plugins/common/common.min.js"></script>
+    <script src="~/adminpanel/js/custom.min.js"></script>
+    <script src="~/adminpanel/js/settings.js"></script>
+    <script src="~/adminpanel/js/gleek.js"></script>
+    <script src="~/adminpanel/js/styleSwitcher.js"></script>
+
+</body>
+
+</html>
+
+
