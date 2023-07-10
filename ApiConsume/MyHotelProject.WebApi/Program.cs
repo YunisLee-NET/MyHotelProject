@@ -25,6 +25,13 @@ builder.Services.AddControllers();
 //builder.Services.AddScoped<IStaffService, StaffManager>();
 
 builder.Services.CustomService();
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("HotelApiCors", opts =>
+    {
+        opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -40,6 +47,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("HotelApiCors");
 app.UseAuthorization();
 
 app.MapControllers();

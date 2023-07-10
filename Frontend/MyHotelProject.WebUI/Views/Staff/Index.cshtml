@@ -1,14 +1,29 @@
-﻿
+﻿@model List<StaffViewModel>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
 }
 
-<h3>+Hey bro, say poxi poxi</h3>
-<h3>-Pox nedi qaqa.</h3>
-<h3>+Say poxi poxi</h3>
-<h3>-Bildiyimiz pox?</h3>
-<h3>+Just say poxi poxi</h3>
-<h3>-E di pox nedi dene</h3>
-<h3>+Okey bro</h3>
+<h1>Index</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Title</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var x in Model)
+        {
+            <tr>
+                <th scope="row">@x.StaffID</th>
+                <td>@x.FullName</td>
+                <td>@x.Title</td>
+                <td><a href="#" class="btn btn-success">Salam</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
 
