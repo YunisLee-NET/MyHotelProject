@@ -11,7 +11,8 @@
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Title</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Update</th>
         </tr>
     </thead>
     <tbody>
@@ -21,9 +22,11 @@
                 <th scope="row">@x.StaffID</th>
                 <td>@x.FullName</td>
                 <td>@x.Title</td>
-                <td><a href="#" class="btn btn-success">Salam</a></td>
+                <td><a href="/Staff/DeleteStaff/@x.StaffID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Staff/UpdateStaff/@x.StaffID" class="btn btn-warning">Yenile</a></td>
             </tr>
         }
     </tbody>
 </table>
+<a href="/Staff/AddStaff/" class="btn btn-primary">Isci elave et</a>
 

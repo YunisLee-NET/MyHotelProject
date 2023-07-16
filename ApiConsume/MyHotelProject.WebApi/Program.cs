@@ -4,11 +4,23 @@ using MyHotelProject.DataAccessLayer.Abstract;
 using MyHotelProject.DataAccessLayer.Concrete;
 using MyHotelProject.DataAccessLayer.EntityFramework;
 using MyHotelProject.DataAccessLayer.Repositories;
+using MyHotelProject.WebApi.Mapping;
 using MyHotelProject.WebApi.ProjectStartUp;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddAutoMapper(opt =>
+{
+    opt.AddProfile(new MappingConfugiration());
+});
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("HotelApiCors", opts =>
+    {
+        opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
 
 builder.Services.AddControllers();
 //builder.Services.AddDbContext<MyContext>(opt =>
@@ -25,13 +37,7 @@ builder.Services.AddControllers();
 //builder.Services.AddScoped<IStaffService, StaffManager>();
 
 builder.Services.CustomService();
-builder.Services.AddCors(opt =>
-{
-    opt.AddPolicy("HotelApiCors", opts =>
-    {
-        opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-    });
-});
+
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

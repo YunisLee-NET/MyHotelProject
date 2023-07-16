@@ -1,0 +1,31 @@
+﻿@model AddStaffViewModel
+@{
+    ViewData["Title"] = "AddStaff";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<h1>AddStaff</h1>
+
+<form method="post">
+    <label>Isci adi</label>
+    <input type="text" asp-for="FullName" class="form-control" />
+    <br />
+
+    <label>Vezifesi</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+
+    <label>Sosial Media 1</label>
+    <input type="text" asp-for="SocialMedia1" class="form-control" />
+    <br />
+
+    <label>Sosial Media 2</label>
+    <input type="text" asp-for="SocialMedia2" class="form-control" />
+    <br />
+
+    <label>Sosial Media 3</label>
+    <input type="text" asp-for="SocialMedia3" class="form-control" />
+    <br />
+
+    <button class="btn btn-success">Tesdiqle</button>
+</form>

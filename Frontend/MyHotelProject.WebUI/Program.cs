@@ -1,9 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using MyHotelProject.DataAccessLayer.Concrete;
+using MyHotelProject.EntityLayer.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<MyContext>();
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<MyContext>();
 builder.Services.AddHttpClient();
 builder.Services.AddControllersWithViews();
 

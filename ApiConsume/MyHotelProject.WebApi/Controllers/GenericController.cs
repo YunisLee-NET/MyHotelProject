@@ -23,9 +23,10 @@ namespace MyHotelProject.WebApi.Controllers
             return Ok(values);
         }
         [HttpGet("{id}")]
-        public IActionResult GetAllByİD()
+        public IActionResult GetAllByID(int id)
         {
-            return Ok();
+            var values = _genericService.TGetByID(id);
+            return Ok(values);
         }
 
         [HttpPost]
@@ -35,15 +36,18 @@ namespace MyHotelProject.WebApi.Controllers
             return Ok();
         }
 
-        [HttpDelete]
-        public IActionResult DeleteData()
+        [HttpDelete("{id}")]
+        public IActionResult DeleteData(int id)
         {
+            var values = _genericService.TGetByID(id);
+            _genericService.TDelete(values);
             return Ok();
         }
 
         [HttpPut]
-        public IActionResult UpdateData()
+        public IActionResult UpdateData(T t)
         {
+            _genericService.TUpdate(t);
             return Ok();
         }
     }
