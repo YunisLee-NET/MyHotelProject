@@ -9,5 +9,6 @@ namespace MyHotelProject.BusinessLayer.Abstract
 {
     public interface IStaffService:IGenericService<Staff>
     {
+        Task<int> GetStaffAsync();
     }
 }

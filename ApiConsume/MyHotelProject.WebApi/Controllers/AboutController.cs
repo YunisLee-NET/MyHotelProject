@@ -7,9 +7,9 @@ namespace MyHotelProject.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SubscribeController : GenericController<Subscribe>
+    public class AboutController : GenericController<About>
     {
-        public SubscribeController(IGenericService<Subscribe> genericService) : base(genericService)
+        public AboutController(IGenericService<About> genericService) : base(genericService)
         {
         }
     }

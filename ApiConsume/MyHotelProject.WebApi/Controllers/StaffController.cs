@@ -9,10 +9,18 @@ namespace MyHotelProject.WebApi.Controllers
     [ApiController]
     public class StaffController : GenericController<Staff>
     {
-        public StaffController(IGenericService<Staff> genericService) : base(genericService)
+        private readonly IStaffService _staffService;
+        public StaffController(IGenericService<Staff> genericService, IStaffService staffService) : base(genericService)
         {
+            _staffService = staffService;
         }
 
+        [HttpGet("staffCount")]
+        public async Task<IActionResult> GetStaffCount()
+        {
+            var staffCount = await _staffService.GetStaffAsync();
+            return Ok(staffCount);
+        }
         
         //Controller ControllerBaseden miras alinan zaman yazilan kodlar
 

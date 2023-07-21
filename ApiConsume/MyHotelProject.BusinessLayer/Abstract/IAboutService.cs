@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyHotelProject.DataAccessLayer.Abstract
+namespace MyHotelProject.BusinessLayer.Abstract
 {
-    public interface IStaffDal:IGenericDal<Staff>
+    public interface IAboutService:IGenericService<About>
     {
-        Task<int> GetStaffCount();
     }
 }

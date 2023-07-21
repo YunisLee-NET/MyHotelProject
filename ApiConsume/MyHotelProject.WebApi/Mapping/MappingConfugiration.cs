@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MyHotelProject.DtoLayer.Dtos.AboutDtos;
 using MyHotelProject.DtoLayer.Dtos.RoomDtos;
 using MyHotelProject.DtoLayer.StaffDtos;
 using MyHotelProject.EntityLayer.Concrete;
@@ -16,6 +17,10 @@ namespace MyHotelProject.WebApi.Mapping
             CreateMap<Room, RoomListDto>().ReverseMap();
             CreateMap<Room, RoomAddDto>().ReverseMap();
             CreateMap<Room, RoomUpdateDto>().ReverseMap();
+
+            CreateMap<About,AboutListDto>().ReverseMap();
+            CreateMap<About,AboutAddDto>().ReverseMap();
+            CreateMap<About,AboutUpdateDto>().ReverseMap();
         }
     }
 }

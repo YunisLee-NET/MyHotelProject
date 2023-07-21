@@ -2,7 +2,7 @@
 
 namespace MyHotelProject.WebUI.ViewComponents.Default
 {
-    public class _HeadPartial:ViewComponent
+    public class _HeadPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {

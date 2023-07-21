@@ -11,8 +11,15 @@ namespace MyHotelProject.BusinessLayer.Concrete
 {
     public class StaffManager : GenericManager<Staff>, IStaffService
     {
-        public StaffManager(IGenericDal<Staff>? genericdal) : base(genericdal)
+        private readonly IStaffDal _staffDal;
+        public StaffManager(IGenericDal<Staff>? genericdal, IStaffDal staffDal) : base(genericdal)
         {
+            _staffDal = staffDal;
+        }
+
+        public async Task<int> GetStaffAsync()
+        {
+            return await _staffDal.GetStaffCount();
         }
     }
 }
